@@ -127,11 +127,7 @@ export const ShellProvider: React.FC<ShellProviderProps> = ({ children }) => {
 				setHistory("");
 				break;
 			default: {
-				if (Object.keys(bin).indexOf(cmd) === -1) {
-					setHistory(
-						`Command not found: ${cmd}. Try 'help' to get started.`,
-					);
-				} else {
+				if (Object.keys(bin).indexOf(cmd) !== -1) {
 					try {
 						let loading = "Loading.";
 						const intervalId = setInterval(() => {
@@ -145,6 +141,24 @@ export const ShellProvider: React.FC<ShellProviderProps> = ({ children }) => {
 					} catch (error) {
 						setHistory(error.message);
 					}
+				} else if (Object.keys(bin.ModeCommands).indexOf(cmd) !== -1) {
+					try {
+						let loading = "Loading.";
+						const intervalId = setInterval(() => {
+							loading += ".";
+							setHistory(loading);
+						}, 100);
+						const output = await bin.ModeCommands[cmd](args);
+
+						clearInterval(intervalId);
+						setHistory(output);
+					} catch (error) {
+						setHistory(error.message);
+					}
+				} else {
+					setHistory(
+						`Command not found: ${cmd}. Try 'help' to get started.`,
+					);
 				}
 			}
 		}
