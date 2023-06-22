@@ -136,4 +136,4 @@ export const about = async (args?: string[]): Promise<string> => {
 		"<span class='font-bold'>5) (중요) 끝까지 자리를 지켜 경품을 받아간다.</span>\n";
 
 	return message;
-}
+};

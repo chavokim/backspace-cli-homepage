@@ -26,21 +26,19 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 	const getTitle = () => {
 		if (process.env.NEXT_PUBLIC_WEB_MODE === "backend") {
 			return "[← Backspace; 더 멀리 나아가는 방법] 반상회";
-		}	
-		
-		if(process.env.NEXT_PUBLIC_WEB_MODE === "data") {
+		}
+
+		if (process.env.NEXT_PUBLIC_WEB_MODE === "data") {
 			return "DAXI (Data•Ai taXI) 반상회";
 		}
-		
+
 		return "반상회";
 	};
-	
+
 	return (
 		<>
 			<Head>
-				<title>
-					{getTitle()}
-				</title>
+				<title>{getTitle()}</title>
 			</Head>
 			<div
 				className="overflow-hidden h-full rounded"

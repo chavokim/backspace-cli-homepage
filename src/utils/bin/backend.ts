@@ -140,4 +140,4 @@ export const about = async (args?: string[]): Promise<string> => {
 		"A. 몇가지 준비하고 있습니다. 기대해주세요\n";
 
 	return message;
-}
+};
