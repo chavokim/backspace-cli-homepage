@@ -1,6 +1,6 @@
 import redis from "../../utils/redis";
 
-const key = "chat-4";
+const key = `${process.env.NEXT_PUBLIC_WEB_MODE}-chat-1`;
 
 export default async function handler(req, res) {
 	if (req.method === "GET") {
