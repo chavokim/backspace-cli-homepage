@@ -32,6 +32,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 			return "DAXI (Data•Ai taXI) 반상회";
 		}
 
+		if (process.env.NEXT_PUBLIC_WEB_MODE === "frontend") {
+			return "FEtch 반상회";
+		}
+
 		return "반상회";
 	};
 
