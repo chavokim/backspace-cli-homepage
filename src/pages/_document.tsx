@@ -98,7 +98,7 @@ class MyDocument extends Document {
 					<meta name="title" content="Backspace - 2023" />
 					<meta
 						name="description"
-						content="Backspace; The way to move further"
+						content="await fetch(&quot;글또 8th 프론트엔드 반상회&quot;)"
 					/>
 				</Head>
 
