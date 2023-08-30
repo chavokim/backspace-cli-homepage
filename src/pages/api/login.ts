@@ -21,10 +21,12 @@ async function authorize() {
 	return client;
 }
 
+const spreadsheetId = process.env.SPREADSHEET_ID || "1CoFrSX0U5AwWULnjyDtVN-aRXizDmWor8k31S5XfeUo";
+
 async function listUsers(auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	const res = await sheets.spreadsheets.values.get({
-		spreadsheetId: "1CoFrSX0U5AwWULnjyDtVN-aRXizDmWor8k31S5XfeUo",
+		spreadsheetId,
 		range: "Sheet1!A2:B",
 	});
 	const rows = res.data.values;
@@ -35,7 +37,7 @@ async function listUsers(auth) {
 async function updateUser(auth, rowIdx) {
 	const sheets = google.sheets({ version: "v4", auth });
 	await sheets.spreadsheets.values.update({
-		spreadsheetId: "1CoFrSX0U5AwWULnjyDtVN-aRXizDmWor8k31S5XfeUo",
+		spreadsheetId,
 		range: `Sheet1!B${2 + rowIdx}`,
 		valueInputOption: "RAW",
 		resource: {
