@@ -36,6 +36,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 			return "FEtch 반상회";
 		}
 
+		if (process.env.NEXT_PUBLIC_WEB_MODE === "connectto") {
+			return "커넥또 반상회";
+		}
+
 		return "반상회";
 	};
 
