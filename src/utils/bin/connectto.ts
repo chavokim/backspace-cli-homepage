@@ -29,7 +29,7 @@ export const usersheet = async (args: string[]): Promise<string> => {
 export const banner = (args?: string[]): string => {
 	return `
 <div class="flex flex-row flex-wrap text-[9px] md:text-xs">
-<span class="text-[0.75rem] sm:text-[11px] md:text-[16px]">
+<span class="text-[1.8vw] sm:text-[11px] md:text-[16px]">
  .o88b.  .d88b.  d8b   db d8b   db d88888b  .o88b. d888888b d888888b  .d88b.  
 d8P  Y8 .8P  Y8. 888o  88 888o  88 88'     d8P  Y8 \`~~88~~' \`~~88~~' .8P  Y8. 
 8P      88    88 88V8o 88 88V8o 88 88ooooo 8P         88       88    88    88 
