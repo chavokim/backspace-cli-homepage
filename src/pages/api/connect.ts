@@ -2,8 +2,7 @@ import clientPromise from "../../mongodb";
 
 export default async function handler(req, res) {
 	if (!["POST", "PATCH", "GET"].includes(req.method)) {
-		res.status(405).json({ error: "Method not allowed" });
-		return;
+		return res.status(405).json({ error: "Method not allowed" });
 	}
 
 	if (req.method === "GET") {
@@ -19,7 +18,7 @@ export default async function handler(req, res) {
 
 			return res.status(200).json(currMember);
 		} catch (e) {
-			res.status(404).json({
+			return res.status(404).json({
 				message: "User not found",
 			});
 		}
@@ -37,7 +36,7 @@ export default async function handler(req, res) {
 			const currMember = await members.findOne({ fromUser });
 
 			if (!currMember) {
-				res.status(404).json({
+				return res.status(404).json({
 					message:
 						"connect init을 사용해서 연결 정보를 등록해주세요.",
 				});
@@ -54,7 +53,7 @@ export default async function handler(req, res) {
 			const toMember = await members.findOne({ fromUser: toUser });
 
 			if (!toMember) {
-				res.status(404).json({
+				return res.status(404).json({
 					message:
 						"연결하려는 상대방이 아직 연결 정보를 등록하지 않았습니다.",
 				});
@@ -81,7 +80,7 @@ export default async function handler(req, res) {
 				{ toUser },
 				{
 					$set: {
-						connectedBy: [...currMember.connectedBy, fromUser],
+						connectedBy: [...toMember.connectedBy, fromUser],
 					},
 				},
 			);
@@ -93,7 +92,7 @@ export default async function handler(req, res) {
 				message: `${currMember.connecting + 1}번째 연결 완료`,
 			});
 		} catch (e) {
-			res.status(404).json({
+			return res.status(404).json({
 				message: "User not found",
 			});
 		}
@@ -134,7 +133,7 @@ export default async function handler(req, res) {
 				message: "연결 정보가 등록되었습니다.",
 			});
 		} catch (e) {
-			res.status(404).json({
+			return res.status(404).json({
 				message: "User not found",
 			});
 		}

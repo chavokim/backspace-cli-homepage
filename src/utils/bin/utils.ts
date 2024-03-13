@@ -59,13 +59,23 @@ export const repo = async (args?: string[]): Promise<string> => {
 };
 
 export const chavo = async (args?: string[]): Promise<string> => {
-	let str = "<img" +
+	const content = `<strong>코딩테스트 준비를 위한 알고리즘 정석, 코드트리</strong>의 CTO 김재휘입니다.🙇‍
+2023년도 5월에 열린 글또 8기 백엔드 반상회부터 해당 사이트를 만들어서 운영하고 있습니다.
+감사하게도 많은 분들이 좋아해주셔서 지속적으로 반상회에서 사용되고 있고, 오늘의 반상회에서도 사용될 예정입니다.
+해당 글을 작성하는 지금은 딱 2024/03/14 04:05:19입니다. 그렇습니다. 새벽 감성에 젖기 좋은 시간이죠. 🌙
+저는 글또를 통해 많은 분들을 만났고, 그를 통해 성장할 수 있었습니다. 
+이번 반상회도 많은 분들이 만나서 성장할 수 있는 시간이 되었으면 좋겠습니다. 🥹
+그리고 혹시나 해당 사이트가 마음에 드신다면, 저를 만날 때 \`<strong>사랑해요 김재휘</strong>\`라고 말해주시고
+코딩테스트를 준비하실 때 <a href="https://www.codetree.ai"><strong>코드트리</strong></a>를 이용해주시면 감사하겠습니다.
+\`<strong>chavo</strong>\` 커멘드를 치시고 해당 글을 읽어주신 모든 분들에게 사랑을 전합니다.
+땡큐 앤 알러뷰! 
+`;
+
+	const str =
+		"<div style='display: flex;flex-direction:column;align-items:" +
+		" center;'><img" +
 		" src='https://blog.chavo.dev/_next/image?url=%2Fprofile.jpg&w=384&q=75'" +
-		" style='' />\n\n"
-	str +=
-		"`코딩테스트 준비를 위한 알고리즘 정석` 서비스 코드트리의 CTO 김재휘입니다. 🙇‍\n";
-	str += "글또 8기 반상회부터 해당 사이트를 만들어서 운영하고 있습니다.\n";
-	str += "혹시나 사용하시다 불편하신 점이 있다면 저에게 말씀해주셔요 :)";
+		` style='border-radius: 50%; width: 150px;margin-bottom: 16px;' /><span style='text-align: center'>${content}</span></div>`;
 
 	return str;
 };
