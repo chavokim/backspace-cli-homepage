@@ -108,10 +108,10 @@ export default async function handler(req, res) {
 		const members = db.collection(`members`);
 
 		try {
-			let currMember = await members.findOne({ fromUser });
+			const currMember = await members.findOne({ fromUser });
 
 			if (!currMember) {
-				currMember = await members.insertOne({
+				await members.insertOne({
 					fromUser,
 					link,
 					description,
@@ -119,7 +119,7 @@ export default async function handler(req, res) {
 					connectedBy: [],
 				});
 			} else {
-				currMember = await members.updateOne(
+				await members.updateOne(
 					{ fromUser },
 					{
 						$set: {
@@ -130,7 +130,9 @@ export default async function handler(req, res) {
 				);
 			}
 
-			return res.status(200).json(currMember);
+			return res.status(200).json({
+				message: "연결 정보가 등록되었습니다.",
+			});
 		} catch (e) {
 			res.status(404).json({
 				message: "User not found",
