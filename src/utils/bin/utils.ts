@@ -57,3 +57,12 @@ export const repo = async (args?: string[]): Promise<string> => {
 
 	return "Opening repository...";
 };
+
+export const chavo = async (args?: string[]): Promise<string> => {
+	let str =
+		"`코딩테스트 준비를 위한 알고리즘 정석` 서비스 코드트리의 CTO 김재휘입니다. 🙇‍\n";
+	str += "글또 8기 반상회부터 해당 사이트를 만들어서 운영하고 있습니다.\n";
+	str += "혹시나 사용하시다 불편하신 점이 있다면 저에게 말씀해주셔요 :)";
+
+	return str;
+};

@@ -15,7 +15,6 @@ export const History: React.FC<Props> = ({ history }) => {
 						<div className="flex-shrink">
 							<Ps1 />
 						</div>
-
 						<div className="flex-grow">{entry.command}</div>
 					</div>
 

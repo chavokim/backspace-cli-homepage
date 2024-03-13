@@ -5,6 +5,8 @@ import { handleTabCompletion } from "../../utils/tabCompletion";
 import { useTheme } from "../../utils/themeProvider";
 import { Ps1 } from "../ps1";
 
+const DynamicCommands = ["chat"];
+
 export const Input = ({ inputRef, containerRef }) => {
 	const { theme } = useTheme();
 	const [value, setValue] = useState("");
@@ -39,6 +41,11 @@ export const Input = ({ inputRef, containerRef }) => {
 			.map(({ command }) => command)
 			.filter((value: string) => value);
 
+		// Handle case where command is ended with Korean character
+		if (event.nativeEvent.isComposing) {
+			return;
+		}
+
 		if (event.key === "c" && event.ctrlKey) {
 			event.preventDefault();
 
@@ -59,7 +66,10 @@ export const Input = ({ inputRef, containerRef }) => {
 
 			setLastCommandIndex(0);
 
-			if (value.includes("chat") && username !== DEFAULT_USER) {
+			if (
+				DynamicCommands.some((command) => value.includes(command)) &&
+				username !== DEFAULT_USER
+			) {
 				setDynamicCommand(value);
 			}
 			setCommand(value);

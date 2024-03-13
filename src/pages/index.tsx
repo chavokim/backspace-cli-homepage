@@ -12,7 +12,7 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
-	const { history, dynamicHistory } = useShell();
+	const { history, dynamicHistory, command } = useShell();
 	const { theme } = useTheme();
 
 	const containerRef = React.useRef(null);
