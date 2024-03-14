@@ -45,7 +45,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 
 	const getDescription = () => {
 		if (process.env.NEXT_PUBLIC_WEB_MODE === "connectto") {
-			return "커넥또 반상회";
+			return "변성윤은 세상에서 제일 귀여운 사람이다";
 		}
 
 		return "글또 반상회 질의응답 사이트";
