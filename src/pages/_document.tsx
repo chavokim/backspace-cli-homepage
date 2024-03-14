@@ -54,7 +54,6 @@ class MyDocument extends Document {
 					/>
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name={"og:image"} content={getImage()} />
-					<meta name={"og:title"} content={getTitle()} />
 					<meta name="msapplication-TileColor" content="#262626" />
 					<meta
 						name="msapplication-TileImage"
