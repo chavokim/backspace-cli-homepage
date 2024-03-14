@@ -95,10 +95,13 @@ class MyDocument extends Document {
 						content="/ms-icon-144x144.png"
 					/>
 					<meta name="theme-color" content="#D79921" />
-					<meta name="title" content="Backspace - 2023" />
+					<meta
+						name="title" 
+						content="반상회 사이트" 
+					/>
 					<meta
 						name="description"
-						content='await fetch("글또 8th 프론트엔드 반상회")'
+						content='반상회 질의응답 사이트'
 					/>
 				</Head>
 
