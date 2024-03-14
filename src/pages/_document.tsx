@@ -16,7 +16,7 @@ class MyDocument extends Document {
 	render() {
 		const getDescription = () => {
 			if (process.env.NEXT_PUBLIC_WEB_MODE === "connectto") {
-				return "변성윤은 세상에서 제일 귀여운 사람이다";
+				return "private class 글또 9기 백엔드인프라 반상회 implements 글또";
 			}
 
 			return "글또 반상회 질의응답 사이트";
