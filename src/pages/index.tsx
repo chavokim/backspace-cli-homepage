@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React from "react";
 import { History } from "../components/history";
 import { Input } from "../components/input";
@@ -23,41 +22,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 		}
 	}, [history]);
 
-	const getTitle = () => {
-		if (process.env.NEXT_PUBLIC_WEB_MODE === "backend") {
-			return "[← Backspace; 더 멀리 나아가는 방법] 반상회";
-		}
-
-		if (process.env.NEXT_PUBLIC_WEB_MODE === "data") {
-			return "DAXI (Data•Ai taXI) 반상회";
-		}
-
-		if (process.env.NEXT_PUBLIC_WEB_MODE === "frontend") {
-			return "FEtch 반상회";
-		}
-
-		if (process.env.NEXT_PUBLIC_WEB_MODE === "connectto") {
-			return "커넥또 반상회";
-		}
-
-		return "반상회";
-	};
-
-	const getDescription = () => {
-		if (process.env.NEXT_PUBLIC_WEB_MODE === "connectto") {
-			return "변성윤은 세상에서 제일 귀여운 사람이다";
-		}
-
-		return "글또 반상회 질의응답 사이트";
-	};
-
 	return (
 		<>
-			<Head>
-				<title>{getTitle()}</title>
-				<meta name="title" content={getTitle()} />
-				<meta name="description" content={getDescription()} />
-			</Head>
 			<div
 				className="overflow-hidden h-full rounded"
 				style={{
