@@ -95,14 +95,8 @@ class MyDocument extends Document {
 						content="/ms-icon-144x144.png"
 					/>
 					<meta name="theme-color" content="#D79921" />
-					<meta
-						name="title" 
-						content="반상회 사이트" 
-					/>
-					<meta
-						name="description"
-						content='반상회 질의응답 사이트'
-					/>
+					<meta name="title" content="반상회 사이트" />
+					<meta name="description" content="반상회 질의응답 사이트" />
 				</Head>
 
 				<body>

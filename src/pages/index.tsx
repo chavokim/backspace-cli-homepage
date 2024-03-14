@@ -47,7 +47,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 		if (process.env.NEXT_PUBLIC_WEB_MODE === "connectto") {
 			return "커넥또 반상회";
 		}
-		
+
 		return "글또 반상회 질의응답 사이트";
 	};
 
@@ -55,14 +55,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 		<>
 			<Head>
 				<title>{getTitle()}</title>
-				<meta
-					name="title"
-					content={getTitle()}
-				/>
-				<meta
-					name="description"
-					content={getDescription()}
-				/>
+				<meta name="title" content={getTitle()} />
+				<meta name="description" content={getDescription()} />
 			</Head>
 			<div
 				className="overflow-hidden h-full rounded"
