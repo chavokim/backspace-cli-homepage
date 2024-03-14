@@ -15,7 +15,7 @@ export const logo = async (args: string[]): Promise<string> => {
 };
 
 export const review = async (args: string[]): Promise<string> => {
-	window.open("https://forms.gle/QTeBPkJdMUQ2wCC9A");
+	window.open("https://forms.gle/ZKXP47Pg1bUNzHNX6");
 
 	return "Opening Review Form...";
 };
