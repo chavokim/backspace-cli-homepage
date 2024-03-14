@@ -47,23 +47,26 @@ class MyDocument extends Document {
 				<Head>
 					<meta charSet="utf-8" />
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-					<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-					<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-					<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+					<link
+						rel="apple-touch-icon"
+						sizes="180x180"
+						href="/apple-touch-icon.png"
+					/>
+					<link
+						rel="icon"
+						type="image/png"
+						sizes="32x32"
+						href="/favicon-32x32.png"
+					/>
+					<link
+						rel="icon"
+						type="image/png"
+						sizes="16x16"
+						href="/favicon-16x16.png"
+					/>
 					<link rel="manifest" href="/site.webmanifest" />
-					<meta
-						name={"og:image"}
-						content={
-							"/thumbnail.png"
-						}
-					/>
-					<meta
-						name={"og:title"}
-						content={getTitle()}
-					/>
-					<title>
-						{getTitle()}
-					</title>
+					<meta name={"og:image"} content={"/thumbnail.png"} />
+					<meta name={"og:title"} content={getTitle()} />
 					<meta name="msapplication-TileColor" content="#262626" />
 					<meta
 						name="msapplication-TileImage"
